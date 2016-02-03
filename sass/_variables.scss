@@ -1,0 +1,86 @@
+$vgrid: 1em;
+$jumpAnchor: 65px;
+$path-css-to-img-folder: '../img';
+
+
+/*** Link Overview ***/
+@mixin link-overview{
+    > a, > span {
+        color:$basecolor;
+        font-weight: bold;
+        font-size:14px;
+    }
+}
+/* Fontawesome Icons */
+@mixin icon-style ($cnt, $pd-ri, $op, $mg-le, $size) {
+    font-family: 'FontAwesome';
+    content: $cnt;
+    padding-right: $pd-ri;
+    opacity: $op;
+    margin-left:$mg-le;
+    font-size:$size;
+}
+@mixin caret {
+    display:inline-block;
+    line-height: 1em;
+    content:'';
+    width:0;
+    height:0;
+    font-size:2px;
+    margin-right:2em;
+}
+@mixin caret-style($size, $col){
+    border:{
+        width:$size;
+        style: solid;
+        color:$col;
+    }
+}
+
+/** shadow ***/
+@mixin shadow {
+    -webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 1px 1px rgba(0,0,0,.2);
+    box-shadow: 0 0 1px 1px rgba(0,0,0,.2);
+}
+
+@mixin transition($item){
+    -webkit-transition: $item 200ms ease-in;
+-moz-transition: $item 200ms ease-in;
+-ms-transition: $item 200ms ease-in;
+-o-transition: $item 200ms ease-in;
+transition: $item 200ms ease-in;
+}
+/*** border-style***/
+@mixin border-style($width, $style, $color){
+    border-width:$width;
+    border-style:$style;
+    border-color:$color;
+}
+@mixin alpha-background-color($color, $background) {
+  $percent: alpha($color) * 100%;
+  $opaque: opacify($color, 1);
+  $solid-color: mix($opaque, $background, $percent);
+  background-color: $solid-color;
+  background-color: $color;
+}
+/*** @include alpha-background-color(rgba($blue, 0.75), white); ***/
+
+/*** Colum count ***/
+@mixin column-count($width,$count,$break-inside){
+-webkit-columns: $width $count;
+   -moz-columns: $width $count;
+        columns: $width $count;
+        > *{
+            -webkit-column-break-inside: $break-inside; /* Chrome, Safari, Opera */
+          page-break-inside: $break-inside; /* Firefox */
+               break-inside: $break-inside; /* IE 10+ */
+        }
+}
+@mixin if-has-ads-responsive{
+     .netpoint-video,
+        &.custom,
+        &.netpoint-billboard{
+            display:none;
+        }
+}

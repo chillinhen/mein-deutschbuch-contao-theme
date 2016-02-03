@@ -1,0 +1,92 @@
+.adsense, .landscape{
+    @media screen and (max-width:$screen-md){
+        display:none;
+    }
+    @media screen and (max-device-width:1024px) and (orientation:landscape){
+        display:none;
+    }
+    text-align:center;
+    .mod_article > &{
+        margin:2em 0;
+    }
+}
+.if-has-ads{
+    @media screen and (max-width:$screen-md) and (orientation:portrait){
+        @include if-has-ads-responsive;
+    }
+    @media screen and (max-width:1024px) and (orientation:landscape){
+        @include if-has-ads-responsive;
+        &#wrapper{
+            padding:0;
+            float:none;
+        }
+    }
+    @media screen and (min-width:1025px){
+    &#main .inside{padding:2em;}
+    .netpoint-video{
+        margin-right: 2em;
+        margin-left: 2em;
+        max-width:300px;
+        height:auto;
+    }
+    &.custom{
+        float:right;
+        margin-right: 160px;
+    }
+    &#wrapper{
+        margin-right:160px;
+        float:left;
+    }
+    &.netpoint-billboard {
+        > * {
+        margin: 2em 3em;
+        border-bottom: 1px solid #ccc;   
+        }
+    }
+    &.footer{
+        max-width: 100%;
+    }
+    #main-nav ul li a{font-size:.9em;}
+    body:not(.startseite) &{
+        .flex-container { 
+            @include display-flex;
+            margin-bottom:2em;
+            > .block{
+                @include flex(2 0);
+                ~*{
+                    @include flex(1 0); 
+                    margin:0 2em;
+                }
+            }
+            > *:first-child {margin-left:0 !important;}
+            > *:last-child {margin-right:0 !important;}
+        }
+    }
+    html.no-flexbox body:not(.startseite) &{
+        .flex-container { 
+            @include container;
+            display:block;
+            > .block{
+                @include span(7 of 12);
+            }
+            > .ad-portrait{@include span(4 of 12);}
+        }
+    }
+    .flex-container.affix-top{
+        @include display-flex;
+        > *{
+            @include flex(1 0);
+        }
+        ul.level_1{
+            @include columns(20em 2);
+        }
+    }
+}
+}
+
+
+
+
+
+
+

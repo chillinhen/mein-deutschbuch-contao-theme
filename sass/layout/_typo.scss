@@ -1,0 +1,86 @@
+$baseHeadWeight:    600;
+$baseFontstack:     'Open Sans', Verdana, Arial, Helvetica, sans-serif;
+$baseFontsize:      14px;
+$baselineHeight:    $baseFontsize * 1.4;
+$bold:              600; 
+$font-size-h1:      $baseFontsize * 2.4;
+$font-size-h2:      $baseFontsize * 1.6;
+$font-size-h3:      $font-size-h1/2;
+$font-size-h4:      $baseFontsize;
+$font-size-h5:      $baseFontsize;
+$font-size-h6:      $baseFontsize;
+
+body {
+    font-family: $baseFontstack;
+    font-size: $baseFontsize;
+    line-height: 1.4;
+    color: $textColor;
+    background-color: $bgColor;
+    text-rendering: optimizeLegibility;
+    @media screen and (max-width:$screen-md){
+        moz-text-size-adjust:auto;
+        -webkit-text-size-adjust: auto;
+        -ms-text-size-adjust: auto;
+    }
+}
+p, td, li {
+    font-size: 1em;
+}
+strong, b {
+    font-weight: $bold;
+}
+em, i {
+    font-style: italic;
+}
+h1{ font-size: $font-size-h1; }
+h2{ font-size: $font-size-h2; }
+h3 { font-size: $font-size-h3; }
+h4 { font-size: $font-size-h4; }
+h5 { font-size: $font-size-h5; }
+h6 { font-size: $font-size-h6; } 
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $baseFontstack;
+    font-weight: $baseHeadWeight;
+    line-height: 1.4;
+    color: $basecolor;
+    .mod_article &{
+        margin:1em 0 .5em;
+    }
+    .ce_table-of-contents{
+        margin-top:0 !important;
+    }
+
+    > a{
+        text-decoration: none; 
+    }
+}
+		 	
+a{
+    &:focus, &:hover {color:$highlightcolor;};
+    &, &:link, &:visited{color:$basecolor;}
+    &.btn-download{
+        color:white;
+        font-weight:bold;
+        text-decoration: none;
+    }
+}
+th {
+    h1, h2, h3, h4, h5, h6{
+        font-family: $baseFontstack;
+        font-size: $baseFontsize * 1.1;
+        font-weight: bold;
+        color:$textColor;
+        line-height:1.1;
+        margin:0;
+    }
+}
+nav {
+    li{
+        a, span{
+            font-size:.95em;
+            text-decoration: none;
+        }
+    }
+}
+

@@ -1,0 +1,27 @@
+$basecolor: 					#2A5C7E;
+
+$darkercolor:					darken($basecolor, 6.5%);
+$highlightcolor:				lighten($basecolor, 20%);
+$green: #37D052;
+$footerColor: 					#1E4159;
+$footerTextcolor: 			$darkercolor;
+$baseBorderColor:				#ccc;
+$wrapperBgColor:				#fbfbfb;
+$footerLinkcolor:				#ffffff;
+$footerBordercolor:			$highlightcolor;
+$stickyNote:                            #FFF6B0;
+
+$bgColor:					#f4f4f4;
+
+$textColor:                     #333;
+$textRedColor:                  #E12A44;
+$textBlueColor:                 #1f2a44;
+$tableHeadBg:			#eee;
+$tableEvenBg:			lighten($textColor, 75%);
+$tableOddBg:			#FBFBFB;
+$topbarBg:			#3F78AD;
+
+$inputOffBg:					#fdfdfd;
+$inputOnBg:					#ffffff;
+$errorColor:					#c20000;
+$confirmColor:					#00ADF1;

@@ -1,0 +1,189 @@
+$susy: (
+columns: 12,  // The number of columns in your grid
+gutters: 1/4    , // The size of a gutter in relation to a single column
+);
+* { 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    &:before, &:after{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+.flex-container{
+    html.flexbox &{
+        @media screen and (min-width:$screen-md + 1){
+            @include display-flex;
+            > div {@include flex(1 0);}
+        }
+        .block.ce_text{
+            @media screen and (max-width:$screen-md){
+                margin:$vgrid * 2 0;
+            }
+            @media screen and (min-width:$screen-md + 1){
+                margin: 2em;
+            }
+        }
+    }
+    html.no-flexbox body.startseite &{
+        @include container;
+        > div {@include span(5 of 12);}
+    }
+}
+.block.ce_text{
+        body.startseite &{
+            margin:$vgrid $vgrid $vgrid * 2 $vgrid;
+        }
+}
+
+#wrapper{
+    > #container{
+        position: relative;
+        @media screen and (max-width:$screen-md){
+            padding:60px $vgrid $vgrid $vgrid;
+            
+        }
+        @media screen and (min-width:$screen-md){
+            @include container(980px);
+        }
+        @media screen and (min-width:$screen-lg){
+            @include container(1170px);
+        }
+        > footer, > header{
+            width:inherit; 
+        }
+        > #container > .inside{
+            width:inherit;
+            .netpoint-billboard, .social, .mod_breadcrumb{
+                width:inherit; 
+            }
+        }
+/*        .addons {
+            @include container;
+            position:relative;
+            .social{
+                > * {float:left;}
+            }
+            @media screen and (max-width:$screen-smallPad){
+                .agoff{
+                    @include span(5 of 12); 
+                }
+                .social{
+                    @include span(6 of 12); 
+                }
+            }
+            @media screen and (min-width:$screen-smallPad){
+                .agoff{
+                    @include span(3 of 12); 
+                }
+                .social{
+                    @include span(5 of 12);   
+                }
+            }
+            .search-boxen{
+                position: absolute;
+                top:-30px;
+                right:0;
+                z-index: 9999;
+            }
+        }*/
+    }
+}
+#header{
+
+    @media screen and (max-width:$screen-md){
+        
+        #responsive-nav{
+            width:100%;
+        }
+        #main-nav, hgroup{display:none;}
+    }
+    @media screen and (min-width:$screen-md + 1){
+        @include container;
+        > .inside {
+            padding:2em;
+        }
+        hgroup{
+            @include span(3 of 12);  
+        }
+        #main-nav{
+            @include span(last 9 of 12);  
+        }
+    }
+    @media screen and (min-width:$screen-lg){
+        > .inside{
+            @include container(1170px);
+        }
+    }
+}
+#side-nav{
+    @media screen and (max-width:$screen-md){
+        display:none;
+    }
+    @media screen and (min-width:$screen-md + 1){
+        @include span(3 of 12);
+        ~ .mod_article {@include span(last 9 of 12);}
+    }
+}
+/*.search-boxen{
+    @media screen and (min-width:$screen-md + 1){
+        @include push(3 of 12);
+    }
+}*/
+#footer {
+    .inside{
+        div.ce_text {
+            font-size:smaller;
+            @include container;
+            clear:both;
+            padding-top:$vgrid;
+            margin:0 !important;
+        }
+        .footer-info{
+            @media screen and (min-width:$screen-sm) and (max-width:$screen-md){
+               
+                .badges{@include span(7 of 12);}
+                .footer-menu{@include span(last 5 of 12);}
+            }
+            @media screen and (min-width:$screen-md){
+                
+                 .badges{@include span(9 of 12);}
+                .footer-menu{@include span(last 3 of 12);}}
+             }
+        }
+
+   
+        .badges{
+            @media screen and (max-width:$screen-md){
+                @include display-flex;
+                @include justify-content(flex-start);
+                @include align-items(flex-end);
+                img {
+                    @include flex(2 0);
+                    margin:0 $vgrid;
+                }
+            }
+            @media screen and (min-width:$screen-md + 1){
+                @include flex(1 0);
+                img {
+                    margin-right:$vgrid;
+                }
+            }
+        }
+
+
+        nav {
+            float:left;
+            li {
+                float: left;
+                margin-right: $vgrid;
+                display: inline-block;
+                &.last{margin:0;}
+            }
+            ~div{float:right;}
+        }
+
+    }

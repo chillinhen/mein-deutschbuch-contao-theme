@@ -1,0 +1,25 @@
+.social-media {
+    @include clearfix;
+}
+.ce_fblikeit_xfbml{
+    float: left;
+}
+.googleplus1{
+    float: left;  
+}
+.twitter{
+    float: left;
+    &:after{
+        content:' ';
+        display: block;
+        clear:both;
+    }
+}
+.ce_fblikeit_xfbml, .googleplus1, .twitter{
+    @media screen and (max-width:$screen-md){
+        margin:0;
+    }
+    @media screen and (min-width:$screen-md + 1){
+       margin:1em; 
+    }
+}

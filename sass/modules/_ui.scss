@@ -1,0 +1,148 @@
+nav a{
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+.btn-download{
+    display:block;
+    text-align:left;
+    > span {
+        display:inline-block;
+        @include shadow;
+        padding:$vgrid/2 $vgrid;
+        background:darken($highlightcolor,5%);
+        margin:$vgrid auto;
+        @media screen and (max-width:$screen-xs){
+            width:100%;
+            display:block;
+        }
+    }
+    * {
+        color:lighten($highlightcolor,80%);
+        text-decoration: none;
+    }
+    &:hover{
+        text-decoration: none;
+        background-image: none;
+    }
+    img {
+        height:1.2em;
+        width:auto;
+        margin:0 0 0 .2em;
+    }
+}
+
+
+.toggle{
+    border-bottom:1px solid currentColor;
+    clear:both;
+    &:hover{
+        cursor: pointer;
+    }
+    &:before{
+        @include icon-style ("\f105", 1em, 1, 0, larger);
+    }
+    &.show:before{
+        content:"\f107";
+    }
+    ~ .flex-container.hidden{
+        display:none;
+    }
+}
+
+/*** Scroll to top ***/
+.scroll-to-top {
+    background: none repeat scroll 0 0 darken($basecolor,90%);
+    @include border-radius(0);
+    position: fixed;
+    right: 20px;
+    bottom: 4%;
+    color: white;
+    cursor: pointer;
+    display: none;
+    font-size:large;
+    line-height: 1;
+    padding: 5px 10px;
+    transition: background-color 0.1s linear 0s;
+    z-index: 9999;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+.mobil_umschalter{
+    a{
+        #footer & {color:white;}
+        body.desktop-layout &:before{
+            @include icon-style ("\f10b",0,1,0,large);
+        }
+        body.mobile-layout &:before{
+            @include icon-style ("\f108",0,1,0,large);
+        }
+        span{
+            text-indent:-9999px;
+            overflow:hidden;
+            display:inline-block;
+            width:0;
+            height:0;
+        }
+    }
+}
+
+/*** Modal Box ***/
+.modal-box{
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include alpha-background-color(rgba($basecolor, 0.75), white);
+    z-index: 9999999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+
+    &:target {
+        opacity:1;
+        pointer-events: auto;
+    }
+    > div {
+        display:block;
+        position: relative;
+        padding: 2em;
+        @media screen and (max-width:$screen-xs){
+           margin: 10%;
+           background:transparent;
+           border:1px dotted white;
+        }
+        @media screen and (min-width:$screen-smallPad){
+          width: 400px;
+          margin: 10% auto;
+          
+          background: $bgColor;
+        }
+
+        .close {
+            background:$highlightcolor;
+            color: white;
+            line-height: 2em;
+            position: absolute;
+            right: -1em;
+            text-align: center;
+            top: -1em;
+            width: 2em;
+            text-decoration: none;
+            font-weight: bold;
+            @include border-radius(1em, 1em);
+            @include shadow;
+            &:hover {
+                background: #00d9ff;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,95 @@
+.red{
+    color:$textRedColor;
+}
+.blue{
+    color:$textBlueColor;
+}
+.red, .blue{
+    font-weight: bold;
+}
+.highlight{
+    .mod_search &{
+        background: $stickyNote;
+        font-style: italic;  
+    }
+}
+.url{
+    .mod_search &{font-style:italic;color:$basecolor;}
+}
+.invisible{
+    display:none !important;
+}
+.pdf_link {
+    text-align: right;
+    margin-bottom: 1em;
+    float:right;
+}
+.pdf_link:after{
+    content:'';
+    clear:both;
+    display:block;
+    border-bottom:1px solid $baseBorderColor;
+    margin-bottom:1em;
+}
+
+table{   
+    width:100%;
+    margin:1em 0;
+    &.responsive {
+        overflow-y: scroll;
+    }
+    @include border-style(1px, solid, $baseBorderColor);
+    thead{
+        tr {
+            border-bottom:1px solid $baseBorderColor;
+            background:$tableHeadBg;
+            th{
+                text-align: center;
+            }
+        }
+    }
+    tbody{
+        tr{
+            border-bottom:1px dashed white;
+            &:nth-child(even){
+                background: $tableEvenBg;
+            } 
+            &:nth-child(odd){
+                background: $tableOddBg;
+            }
+        }
+    }
+    td, th{
+        padding:.5em 1em;
+        @include border-style(1px, dashed, $baseBorderColor);
+        &:first-child{
+            border:0;
+        }
+
+    }
+
+}
+
+.interactive{
+border-bottom:1px dotted $baseBorderColor;
+clear:both;
+    > * {
+        float:left;
+        margin-left: 1em;
+    }
+    > form {
+        &#cse-search-box{
+          
+        }
+        &#leo_finder{
+           
+        }
+        label, .suchfeld,input[type="submit"]{
+            float:left;
+            margin-left: 1em;
+        }
+        .suchfeld {
+            max-width:100px;
+        }
+    }
+}
