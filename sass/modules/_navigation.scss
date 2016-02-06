@@ -326,7 +326,7 @@
         }
     }
 }
-.ce_table-of-contents, .flex-container,.flex-container.affix-top{
+.ce_table-of-contents, .flex-container,.flex-container.affix-top, #sitemap{
     ul.level_1{
         > li {
             @include link-overview; 

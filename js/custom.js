@@ -96,6 +96,9 @@ jQuery(function ($) {
         $(this).next('.collapse').toggle();
     });
     
+    //elastic Videos
+    $('iframe').wrap('<div class="iframe-elastic"></div>');
+    
 });
 
 /** Scroll to Top***/
