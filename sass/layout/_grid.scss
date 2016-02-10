@@ -19,7 +19,7 @@ gutters: 1/4    , // The size of a gutter in relation to a single column
             @include display-flex;
             > div {@include flex(1 0);}
         }
-        .block.ce_text{
+        .block.ce_text, form{
             @media screen and (max-width:$screen-md){
                 margin:$vgrid * 2 0;
             }

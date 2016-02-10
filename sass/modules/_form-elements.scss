@@ -14,7 +14,12 @@ input{
     padding:.5em;
     font-size: .9em;
     border:1px solid $baseBorderColor;
-
+    td &[type="text"]
+    {
+            width: auto !important;
+            max-width: 200px !important;
+            min-width: 50px !important;
+        }
     &[type="button"],&[type="submit"],&[type="reset"]{
         color:white;
         font-size:larger;
@@ -55,6 +60,7 @@ form {
 		border-color: $baseBorderColor;
 		background-color: $inputOffBg;
 	}
+        
 }
 
 .mod_subscribe input[type="text"] {
@@ -119,9 +125,16 @@ div.submit_container {
 	margin-top:1em;
 	margin-bottom:1em;
 }
-form table td {
+td {
+        form & {
 	padding-top:3px;
 	padding-bottom:3px;
+        }
+        
+        form &:first-child{
+            min-width: 100px;
+        }
+        
 }
 
 .tableform table {

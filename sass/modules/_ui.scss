@@ -167,3 +167,10 @@ nav a{
         }
     }
 }
+
+/**** Audio ***/
+
+.ce_player,
+.mejs-container{
+    margin:2 * $vgrid 0 !important;
+}

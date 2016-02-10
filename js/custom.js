@@ -1,4 +1,6 @@
 jQuery(function ($) {
+    //hide all broken images
+    $("img").error(function(){$(this).hide();});
     // run test on initial page load
     checkSize();
 
@@ -64,7 +66,7 @@ jQuery(function ($) {
     $("a[href$='pdf']")
             .addClass('btn-download')
             .wrapInner('<span></span>');
-    $("a[href$='pdf'] span img ").attr('src','http://' + hostname + '/files/images/download.svg');
+    $("a[href$='pdf'] span img ").attr('src','http://' + hostname + '/files/images/download.png');
     if (!Modernizr.svg) {
        $("a[href$='pdf'] span img").attr("src", 'http://' + hostname  + '/files/images/download.png');
     }
